@@ -35,11 +35,14 @@ namespace Estudio1
             {
                 MessageBox.Show("Usuário ADM");
                 grpValidacao.Visible = false;
+                menuStrip1.Enabled = true;
             }
             if(tipo == 2)
             {
                 MessageBox.Show("Usuário Restrito");
                 grpValidacao.Visible = false;
+                menuStrip1.Enabled = true;
+                cadastrarAlunoToolStripMenuItem.Enabled = false;
             }
         }
 
@@ -61,6 +64,35 @@ namespace Estudio1
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void arquivoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 cad_Aluno = new Form2();
+            cad_Aluno.MdiParent = this;
+            cad_Aluno.Show();
+        }
+
+        private void cadastrarLoginToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form3 cad_login = new Form3();
+            cad_login.MdiParent = this;
+            cad_login.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
