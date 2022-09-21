@@ -62,7 +62,7 @@ namespace Estudio1
             {
                 con.Open();
                 MySqlCommand insere = new MySqlCommand("insert into Estudio_Login (usuario, senha, tipo) values ('"+ usuario +"','"+ senha +"'," + tipo +")");
-                MySqlDataReader resultado = login.ExecuteReader();
+                MySqlDataReader resultado = login.ExecueReader();
                 cad = true;
 
             }
