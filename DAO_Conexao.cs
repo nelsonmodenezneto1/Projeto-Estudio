@@ -9,14 +9,14 @@ namespace Estudio1
 {
     class DAO_Conexao
     {
-        private static MySqlConnection con;
+        public static MySqlConnection con;
 
         public static Boolean getConexao(String local, String banco, String user, String senha)
         {
             Boolean retorno = false;
             try
             {
-                con = new MySqlConnection("server="+local+";User ID=" +user+";database="+banco+";password="+senha);
+                con = new MySqlConnection("server=" + local + ";User ID=" + user + ";database=" + banco + ";password=" + senha);
                 //con.Open();
                 retorno = true;
             }
@@ -37,9 +37,9 @@ namespace Estudio1
             try
             {
                 con.Open();
-                MySqlCommand login = new MySqlCommand("select * from Estudio_Login where usuario ='" + usuario + "' and senha='"+senha+"'",con);
+                MySqlCommand login = new MySqlCommand("select * from Estudio_Login where usuario ='" + usuario + "' and senha='" + senha + "'", con);
                 MySqlDataReader resultado = login.ExecuteReader();
-                if(resultado.Read())
+                if (resultado.Read())
                 {
                     tipo = Convert.ToInt32(resultado["tipo"].ToString());
                 }
@@ -55,16 +55,16 @@ namespace Estudio1
             }
             return tipo;
         }
-        public static int CadLogin(String usuario, String senha)
+        public static Boolean CadLogin(string usuario, string senha, int tipo)
         {
             bool cad = false;
             try
             {
                 con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Login (usuario, senha, tipo) values ('"+ usuario +"','"+ senha +"'," + tipo +")");
-                MySqlDataReader resultado = login.ExecueReader();
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Login (usuario, senha, tipo) " +
+                    "values ('" + usuario + "','" + senha + "'," + tipo + ")", con);
+                insere.ExecuteNonQuery();
                 cad = true;
-
             }
             catch (Exception ex)
             {
@@ -74,6 +74,7 @@ namespace Estudio1
             {
                 con.Close();
             }
-            return tipo;
+            return cad;
         }
+    }
 }
