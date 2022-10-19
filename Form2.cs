@@ -35,6 +35,14 @@ namespace Estudio1
         private void button1_Click(object sender, EventArgs e)
         {
             Aluno aluno = new Aluno(txtCPF.Text, txtNome.Text, txtEndereco.Text, txtNumero.Text, txtBairro.Text, txtComplemento.Text, txtCep.Text, txtCidade.Text, txtEstado.Text, txtTelefone.Text, txtEmail.Text);
+            if (aluno.cadastrarAluno())
+            {
+                Console.WriteLine("OII");
+            }
+            else
+            {
+                Console.WriteLine("ERRO");
+            }
 
         }
 
@@ -46,6 +54,27 @@ namespace Estudio1
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtCPF_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Aluno aluno = new Aluno(txtCPF.Text);
+            if (e.KeyChar == 13)
+            {
+                if(aluno.consultarAluno())
+                {
+                    MessageBox.Show("Aluno já cadastar!");
+                }
+                else
+                {
+                    txtNome.Focus();
+                }
+            }
         }
     }
 }

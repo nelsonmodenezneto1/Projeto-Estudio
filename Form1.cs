@@ -94,5 +94,12 @@ namespace Estudio1
         {
             
         }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 cad_excluir = new Form4();
+            cad_excluir.MdiParent = this;
+            cad_excluir.Show();
+        }
     }
 }
