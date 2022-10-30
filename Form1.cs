@@ -101,5 +101,26 @@ namespace Estudio1
             cad_excluir.MdiParent = this;
             cad_excluir.Show();
         }
+
+        private void cadastrarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form5 cad_modalidade = new Form5();
+            cad_modalidade.MdiParent = this;
+            cad_modalidade.Show();
+        }
+
+        private void excluirModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 ex_modalidade = new Form6();
+            ex_modalidade.MdiParent = this;
+            ex_modalidade.Show();
+        }
+
+        private void consultarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form7 con_modalidade = new Form7();
+            con_modalidade.MdiParent = this;
+            con_modalidade.Show();
+        }
     }
 }
