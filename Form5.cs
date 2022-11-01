@@ -21,5 +21,28 @@ namespace Estudio1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            float preco = float.Parse(textbox50.Text);
+            int qtdealunos = int.Parse(textbox51.Text);
+            int qtdeaulas = int.Parse(textbox52.Text);
+            Modalidade modalidade = new Modalidade(textBox1.Text, preco, qtdealunos, qtdeaulas);
+            if (modalidade.cadastrarModalidade())
+            {
+                Console.WriteLine("OII");
+            }
+            else
+            {
+                Console.WriteLine("ERRO");
+            }
+
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
