@@ -13,7 +13,6 @@ namespace Estudio1
         private string Descricao;
         private float Preco;
         private int qtde_alunos, qtde_aulas;
-        private int bolinha;
 
         public string Descricao1 { get => Descricao; set => Descricao = value; }
         public float Preco1 { get => Preco; set => Preco = value; }
@@ -43,7 +42,7 @@ namespace Estudio1
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qtdeAlunos, qtdAulas) values('" + Descricao + "'," + Preco + "," + qtde_alunos + "," + qtde_aulas + ")", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("insert into Estudio_Modalidade (descricaoModalidade, precoModalidade, qtdeAlunos, qtdeAulas) values('"+ Descricao +"',"+ Preco +","+ qtde_alunos + "," + qtde_aulas + ")", DAO_Conexao.con);
                 insere.ExecuteNonQuery();
                 ativo = true;
             }
@@ -84,9 +83,9 @@ namespace Estudio1
             DAO_Conexao.con.Open();
             MySqlCommand consultar = new MySqlCommand("select * from Estudio_Modalidade", DAO_Conexao.con);
             resultado = consultar.ExecuteReader();
+            resultado.Read();
 
             return resultado;
-
         }
         public bool atualizarModaliade()
         {
@@ -97,16 +96,20 @@ namespace Estudio1
         }
         public bool excluirModaliade()
         {
-            bool ativo;
-            ativo = false;
+            bool pou;
+            pou = false;
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand delete = new MySqlCommand("delete from Estudio_Modalidade where descricaoModalidade ='" + Descricao + "'", DAO_Conexao.con);
+                Console.WriteLine("UPDATE Estudio_Modalidade SET ativa=1 where descricaoModalidade = '" + Descricao + "'");
+                MySqlCommand delete = new MySqlCommand("UPDATE Estudio_Modalidade SET ativa=1 where descricaoModalidade = '"+ Descricao +"'", DAO_Conexao.con);
+                delete.ExecuteNonQuery();
+                pou = true;
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                Console.WriteLine("lalalalala");
             }
             finally
             {
@@ -114,7 +117,7 @@ namespace Estudio1
             }
 
 
-            return ativo;
+            return pou;
         }
         private void comboBox1()
         {

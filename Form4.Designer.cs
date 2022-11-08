@@ -40,6 +40,7 @@ namespace Estudio1
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(263, 20);
             this.txtCPF.TabIndex = 0;
+            this.txtCPF.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCPF_MaskInputRejected);
             this.txtCPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.maskedTextBox1_KeyPress);
             // 
             // label1

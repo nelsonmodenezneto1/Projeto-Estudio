@@ -22,7 +22,7 @@ namespace Estudio1
             Aluno aluno = new Aluno(txtCPF.Text);
             if (e.KeyChar == 13)
             {
-                if(aluno.consultarAluno())
+                if(aluno.excluirAluno())
                 {
                     MessageBox.Show("Aluno Excluído");
                 }
@@ -34,6 +34,11 @@ namespace Estudio1
         }
 
         private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
         }

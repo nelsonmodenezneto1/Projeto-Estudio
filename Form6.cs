@@ -19,10 +19,25 @@ namespace Estudio1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Modalidade modalidade= new Modalidade(textBox1.Text);
+
+            if (modalidade.excluirModaliade())
+            {
+               MessageBox.Show("Modalidade Excluída");
+            }
+            else
+            {
+               MessageBox.Show("Modalidade n Encontrada");
+            }
+        }
+        
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void Form6_Load(object sender, EventArgs e)
         {
 
         }
