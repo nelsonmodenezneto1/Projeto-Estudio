@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Estudio1
 {
@@ -58,12 +59,12 @@ namespace Estudio1
 
             return ativo;
         }
-        public MySqlDataReader consultarModalidade(String descricao)
+        public MySqlDataReader consultarModalidade()
         {
             MySqlDataReader resultado = null;
             try { 
             DAO_Conexao.con.Open();
-            MySqlCommand consultar = new MySqlCommand("select descricaoModalidade from Estudio_Modalidade where descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
+            MySqlCommand consultar = new MySqlCommand("select * from Estudio_Modalidade where descricaoModalidade = '" + Descricao + "'", DAO_Conexao.con);
             resultado = consultar.ExecuteReader();
             }
             catch(Exception ex)
@@ -76,21 +77,44 @@ namespace Estudio1
             }
             return resultado;
         }
-        public MySqlDataReader cunsultarTodasModalidades()
-        {
 
+        public MySqlDataReader consultarTodasModalidades()
+        {
             MySqlDataReader resultado = null;
+            try { 
             DAO_Conexao.con.Open();
-            MySqlCommand consultar = new MySqlCommand("select * from Estudio_Modalidade", DAO_Conexao.con);
+            MySqlCommand consultar = new MySqlCommand("select * from Estudio_Modalidade where ativa =0", DAO_Conexao.con);
             resultado = consultar.ExecuteReader();
-            resultado.Read();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("lalalal");
+                DAO_Conexao.con.Close();
+            }
 
             return resultado;
         }
-        public bool atualizarModaliade()
+        public bool atualizarModalidade()
         {
             bool ativo;
             ativo = false;
+
+            try {
+                DAO_Conexao.con.Open();
+                MySqlCommand atualizar = new MySqlCommand("update Estudio_Modalidade set precoModalidade =" + Preco + ", qtdeAlunos =" + qtde_alunos + ", qtdeAulas =" + qtde_aulas + " where descricaoModalidade like '"+ Descricao+"'",DAO_Conexao.con);
+                Console.WriteLine("update Estudio_Modalidade set precoModalidade =" + Preco + ", qtdeAlunos =" + qtde_alunos + ", qtdeAulas =" + qtde_aulas + "where descricaoModalidade like '" + Descricao + "'");
+                atualizar.ExecuteNonQuery();
+                ativo = true;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine("lalalal");
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
 
             return ativo;
         }
