@@ -35,16 +35,19 @@ namespace Estudio1
             this.cadastrarLoginToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpValidacao = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.L = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.modalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.excluirModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultarModalidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirTurmaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpValidacao.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +58,8 @@ namespace Estudio1
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arquivoToolStripMenuItem,
-            this.modalidadeToolStripMenuItem});
+            this.modalidadeToolStripMenuItem,
+            this.turmaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1067, 28);
@@ -77,97 +81,30 @@ namespace Estudio1
             // cadastrarAlunoToolStripMenuItem
             // 
             this.cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cadastrarAlunoToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.cadastrarAlunoToolStripMenuItem.Text = "Cadastrar Aluno";
             this.cadastrarAlunoToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunoToolStripMenuItem_Click);
             // 
             // cadastrarLoginToolStripMenuItem
             // 
             this.cadastrarLoginToolStripMenuItem.Name = "cadastrarLoginToolStripMenuItem";
-            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cadastrarLoginToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.cadastrarLoginToolStripMenuItem.Text = "Cadastrar Login";
             this.cadastrarLoginToolStripMenuItem.Click += new System.EventHandler(this.cadastrarLoginToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // excluirToolStripMenuItem
             // 
             this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
-            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
             this.excluirToolStripMenuItem.Text = "Excluir";
             this.excluirToolStripMenuItem.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
-            // 
-            // grpValidacao
-            // 
-            this.grpValidacao.Controls.Add(this.button1);
-            this.grpValidacao.Controls.Add(this.label2);
-            this.grpValidacao.Controls.Add(this.L);
-            this.grpValidacao.Controls.Add(this.textBox2);
-            this.grpValidacao.Controls.Add(this.textBox1);
-            this.grpValidacao.Location = new System.Drawing.Point(219, 121);
-            this.grpValidacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpValidacao.Name = "grpValidacao";
-            this.grpValidacao.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.grpValidacao.Size = new System.Drawing.Size(635, 290);
-            this.grpValidacao.TabIndex = 2;
-            this.grpValidacao.TabStop = false;
-            this.grpValidacao.Text = "Validação";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(164, 190);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(304, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "LOGAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(160, 126);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // L
-            // 
-            this.L.AutoSize = true;
-            this.L.Location = new System.Drawing.Point(160, 82);
-            this.L.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.L.Name = "L";
-            this.L.Size = new System.Drawing.Size(40, 16);
-            this.L.TabIndex = 2;
-            this.L.Text = "Login";
-            this.L.Click += new System.EventHandler(this.L_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(273, 126);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 22);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(273, 82);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // modalidadeToolStripMenuItem
             // 
@@ -200,6 +137,96 @@ namespace Estudio1
             this.consultarModalidadeToolStripMenuItem.Text = "Consultar Modalidade";
             this.consultarModalidadeToolStripMenuItem.Click += new System.EventHandler(this.consultarModalidadeToolStripMenuItem_Click);
             // 
+            // grpValidacao
+            // 
+            this.grpValidacao.Controls.Add(this.button1);
+            this.grpValidacao.Controls.Add(this.label2);
+            this.grpValidacao.Controls.Add(this.L);
+            this.grpValidacao.Controls.Add(this.textBox2);
+            this.grpValidacao.Controls.Add(this.textBox1);
+            this.grpValidacao.Location = new System.Drawing.Point(219, 121);
+            this.grpValidacao.Margin = new System.Windows.Forms.Padding(4);
+            this.grpValidacao.Name = "grpValidacao";
+            this.grpValidacao.Padding = new System.Windows.Forms.Padding(4);
+            this.grpValidacao.Size = new System.Drawing.Size(635, 290);
+            this.grpValidacao.TabIndex = 2;
+            this.grpValidacao.TabStop = false;
+            this.grpValidacao.Text = "Validação";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(164, 190);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(304, 28);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "LOGAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(160, 126);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Senha";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // L
+            // 
+            this.L.AutoSize = true;
+            this.L.Location = new System.Drawing.Point(160, 82);
+            this.L.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.L.Name = "L";
+            this.L.Size = new System.Drawing.Size(40, 16);
+            this.L.TabIndex = 2;
+            this.L.Text = "Login";
+            this.L.Click += new System.EventHandler(this.L_Click);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(273, 126);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(193, 22);
+            this.textBox2.TabIndex = 1;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(273, 82);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(193, 22);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // turmaToolStripMenuItem
+            // 
+            this.turmaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarTurmaToolStripMenuItem,
+            this.excluirTurmaToolStripMenuItem});
+            this.turmaToolStripMenuItem.Name = "turmaToolStripMenuItem";
+            this.turmaToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.turmaToolStripMenuItem.Text = "Turma";
+            // 
+            // cadastrarTurmaToolStripMenuItem
+            // 
+            this.cadastrarTurmaToolStripMenuItem.Name = "cadastrarTurmaToolStripMenuItem";
+            this.cadastrarTurmaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.cadastrarTurmaToolStripMenuItem.Text = "Cadastrar Turma";
+            this.cadastrarTurmaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarTurmaToolStripMenuItem_Click);
+            // 
+            // excluirTurmaToolStripMenuItem
+            // 
+            this.excluirTurmaToolStripMenuItem.Name = "excluirTurmaToolStripMenuItem";
+            this.excluirTurmaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.excluirTurmaToolStripMenuItem.Text = "Excluir Turma";
+            this.excluirTurmaToolStripMenuItem.Click += new System.EventHandler(this.excluirTurmaToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -209,7 +236,7 @@ namespace Estudio1
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Estúdio";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -240,6 +267,9 @@ namespace Estudio1
         private System.Windows.Forms.ToolStripMenuItem cadastrarModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excluirModalidadeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarModalidadeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarTurmaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem excluirTurmaToolStripMenuItem;
     }
 }
 

@@ -122,5 +122,19 @@ namespace Estudio1
             con_modalidade.MdiParent = this;
             con_modalidade.Show();
         }
+
+        private void cadastrarTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form8 turmacad = new Form8();
+            turmacad.MdiParent = this;
+            turmacad.Show();
+        }
+
+        private void excluirTurmaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form9 turmaex = new Form9();
+            turmaex.MdiParent = this;
+            turmaex.Show();
+        }
     }
 }

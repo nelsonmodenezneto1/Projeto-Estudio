@@ -94,6 +94,32 @@ namespace Estudio1
 
             return resultado;
         }
+        public int buscarId()
+        {
+            MySqlDataReader buscar = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand busca = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade WHERE descricaoModalidade like '" + Descricao + "'", DAO_Conexao.con);
+                buscar = busca.ExecuteReader();
+                if (buscar.Read())
+                {
+                    return Int32.Parse(buscar["idEstudio_Modalidade"].ToString());
+                }
+                else
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return -1;
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+        }
+
         public bool atualizarModalidade()
         {
             bool ativo;
