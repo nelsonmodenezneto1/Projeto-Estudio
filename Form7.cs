@@ -17,6 +17,18 @@ namespace Estudio1
         {
             InitializeComponent();
             carregaCombo();
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            button1.Visible = false;
+
+        }
+
+        public Form7(int a)
+        {
+            InitializeComponent();
+            carregaCombo();
+
         }
 
         public void carregaCombo()

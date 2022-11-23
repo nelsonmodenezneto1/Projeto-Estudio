@@ -32,6 +32,11 @@ namespace Estudio1
             if (modalidade.cadastrarModalidade())
             {
                 Console.WriteLine("OII");
+
+                textBox1.Text = "";
+                textbox50.Text = "";
+                textbox51.Text = "";
+                textbox52.Text = "";
             }
             else
             {

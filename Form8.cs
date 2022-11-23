@@ -18,6 +18,7 @@ namespace Estudio1
         {
             InitializeComponent();
             carregaCombo();
+            id = 0;
             Modalidade modalidade = new Modalidade();
             MySqlDataReader r = modalidade.consultarTodasModalidades();
             while (r.Read())
@@ -25,7 +26,6 @@ namespace Estudio1
                 dataGridView1.Rows.Add(r["descricaoModalidade"].ToString());
             }
             DAO_Conexao.con.Close();
-            id = 0;
         }
 
         private void Form8_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace Estudio1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (id == -1)
+            if (id == 0)
             {
                 MessageBox.Show("Modalidade inválida.");
             }
@@ -49,6 +49,11 @@ namespace Estudio1
                 else
                     MessageBox.Show("Erro de cadastro!");
             }
+            comboBox1.Text = "";
+            textBox4.Text = "";
+            textBox3.Text = "";
+            maskedTextBox1.Text = "";
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -70,14 +75,14 @@ namespace Estudio1
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             Modalidade modalidade = new Modalidade(comboBox1.Text);
-            int id = modalidade.buscarId();
-            if (id == -1)
+            int busca = modalidade.buscarId();
+            if (busca == 0)
             {
                 MessageBox.Show("ID não encontrado!");
             }
             else
             {
-                id = id;
+                id = busca;
             }
         }
     }

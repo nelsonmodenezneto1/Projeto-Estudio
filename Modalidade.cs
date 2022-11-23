@@ -100,19 +100,19 @@ namespace Estudio1
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand busca = new MySqlCommand("SELECT idEstudio_Modalidade FROM Estudio_Modalidade WHERE descricaoModalidade like '" + Descricao + "'", DAO_Conexao.con);
+                MySqlCommand busca = new MySqlCommand("select idEstudio_Modalidade from Estudio_Modalidade where descricaoModalidade like '" + Descricao + "'", DAO_Conexao.con);
                 buscar = busca.ExecuteReader();
                 if (buscar.Read())
                 {
                     return Int32.Parse(buscar["idEstudio_Modalidade"].ToString());
                 }
                 else
-                return -1;
+                return 0;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return -1;
+                return 0;
             }
             finally
             {

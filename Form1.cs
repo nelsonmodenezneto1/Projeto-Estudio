@@ -136,5 +136,13 @@ namespace Estudio1
             turmaex.MdiParent = this;
             turmaex.Show();
         }
+
+        private void atualizarModalidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            Form7 con_modalidade = new Form7(a);
+            con_modalidade.MdiParent = this;
+            con_modalidade.Show();
+        }
     }
 }
